@@ -22,8 +22,7 @@ public class NameSurferGraph extends GCanvas
 		//	 You fill in the rest //
 		GLine one = new GLine (0,0,0,APPLICATION_HEIGHT);
 		add (one);
-		GLine two = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
-		add (two);
+
 	}
 	
 	/**
@@ -53,7 +52,8 @@ public class NameSurferGraph extends GCanvas
 	* the size of the canvas changes.
 	*/
 	public void update() {
-		//	 You fill this in //
+		GLine two = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
+		add (two);
 	}
 	
 	
