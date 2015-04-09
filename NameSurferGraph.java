@@ -94,7 +94,7 @@ public class NameSurferGraph extends GCanvas
 		
 		GLine upperLine = new GLine (0, GRAPH_MARGIN_SIZE, APPLICATION_WIDTH,GRAPH_MARGIN_SIZE );
 		
-		GLine lowerLine = new GLine (APPLICATION_HEIGHT, APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE, APPLICATION_HEIGHT,APPLICATION_HEIGHT );
+		GLine lowerLine = new GLine (APPLICATION_HEIGHT, APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE, 100,100 );
 		
 		add (oneLine);
 		add (twoLine);
