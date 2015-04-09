@@ -24,7 +24,7 @@ public class NameSurferEntry implements NameSurferConstants {
 
 	private void parseLine(String line) {
 
-		}
+		
 	}
 
 /* Method: getName() */
