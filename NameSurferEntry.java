@@ -23,18 +23,7 @@ public class NameSurferEntry implements NameSurferConstants {
 	}
 
 	private void parseLine(String line) {
-		int nameEnd = line.indexOf(" ");
-		name = line.substring(0, nameEnd);
-	
-		String numbers = line.substring(nameEnd +1);
-		String startParsing = numbers;
-		for (int i=0; i<NDECADES; i++) {
-			int startDecade = startParsing.indexOf(" ");
-			int endDecade = startParsing.indexOf(" ", startDecade);
-			String decade = startParsing.substring(startDecade, endDecade);
-			int decadeInt = Integer.parseInt(decade);
-			rankings[i] = decadeInt;
-			startParsing = startParsing.substring(endDecade);
+
 		}
 	}
 

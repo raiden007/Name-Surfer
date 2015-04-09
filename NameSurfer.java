@@ -23,6 +23,20 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
 		NameSurferEntry entry = new NameSurferEntry(line);
 		println(entry.getName());
+		
+		int nameEnd = line.indexOf(" ");
+		name = line.substring(0, nameEnd);
+	
+		String numbers = line.substring(nameEnd +1);
+		String startParsing = numbers;
+		for (int i=0; i<NDECADES; i++) {
+			int startDecade = startParsing.indexOf(" ");
+			println (startDecade);
+//			int endDecade = startParsing.indexOf(" ", startDecade);
+//			String decade = startParsing.substring(startDecade, endDecade);
+//			int decadeInt = Integer.parseInt(decade);
+//			rankings[i] = decadeInt;
+//			startParsing = startParsing.substring(endDecade);
 	}
 
 private void addInteractors() {
@@ -55,4 +69,7 @@ private void addInteractors() {
 	public JTextField tf;
 	public JButton graph;
 	public JButton clear;
+	
+	private String name;
+	private int[] rankings = new int[NDECADES];
 }
