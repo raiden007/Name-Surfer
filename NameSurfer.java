@@ -23,8 +23,9 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
 		NameSurferEntry entry = new NameSurferEntry(line);
 		println(entry.getName());
-		println(entry.getRank(1));
-
+		for (int i=1; i<11; i++) {
+			println(entry.getRank(i));		
+		}
 
 	}
 
