@@ -45,6 +45,15 @@ public class NameSurferGraph extends GCanvas
 		int nineX = 7*(APPLICATION_WIDTH / 10);
 		GLine nineLine = new GLine (nineX,0,nineX,APPLICATION_HEIGHT);
 		
+		int tenX = 8*(APPLICATION_WIDTH / 10);
+		GLine tenLine = new GLine (tenX,0,tenX,APPLICATION_HEIGHT);
+		
+		int elevenX = 9*(APPLICATION_WIDTH / 10);
+		GLine elevenLine = new GLine (elevenX,0,elevenX,APPLICATION_HEIGHT);
+		
+		int twelveX = APPLICATION_WIDTH;
+		GLine twelveLine = new GLine (twelveX,0,twelveX,APPLICATION_HEIGHT);
+		
 		add (oneLine);
 		add (twoLine);
 		add (threeLine);
@@ -54,6 +63,9 @@ public class NameSurferGraph extends GCanvas
 		add (sevenLine);
 		add (eightLine);
 		add (nineLine);
+		add (tenLine);
+		add (elevenLine);
+		add (twelveLine);
 	}
 	
 	/**
