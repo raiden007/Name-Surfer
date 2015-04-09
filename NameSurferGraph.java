@@ -57,7 +57,7 @@ public class NameSurferGraph extends GCanvas
 	
 	
 	private void createBackgroundLabels() {
-		GLabel one = new GLabel ("1900", APPLICATION_HEIGHT, 100);
+		GLabel one = new GLabel ("1900",0 , APPLICATION_HEIGHT);
 		
 		
 		add (one);
