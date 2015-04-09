@@ -41,6 +41,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 			println(rankings[i]);
 			startParsing = startParsing.substring(endDecade + 1);
 			println("new start parsing:" + startParsing);
+		}
 		
 		
 		
