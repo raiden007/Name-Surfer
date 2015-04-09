@@ -6,12 +6,10 @@
  * of that name for each decade stretching back to 1900.
  */
 
-import acm.program.ConsoleProgram;
 import acm.util.*;
 import java.util.*;
 
-public class NameSurferEntry extends ConsoleProgram {
-//public class NameSurferEntry implements NameSurferConstants {
+public class NameSurferEntry implements NameSurferConstants {
 
 /* Constructor: NameSurferEntry(line) */
 /**
@@ -29,7 +27,15 @@ public class NameSurferEntry extends ConsoleProgram {
 		name = line.substring(0, nameEnd);
 	
 		String numbers = line.substring(nameEnd +1);
-		
+		String startParsing = numbers;
+		for (int i=0; i<NDECADES; i++) {
+			int startDecade = startParsing.indexOf(" ");
+			int endDecade = startParsing.indexOf(" ", startDecade);
+			String decade =ÊstartParsing.substring(startDecade, endDecade);
+			int decadeInt = Integer.parseInt("decade");
+			rankings[i] = decadeInt;
+			startParsing = startParsing.substring(endDecade);
+		}
 	}
 
 /* Method: getName() */
