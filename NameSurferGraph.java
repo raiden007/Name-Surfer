@@ -67,7 +67,7 @@ public class NameSurferGraph extends GCanvas
 		GLabel eight = new GLabel ("1970",7*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
 		GLabel nine = new GLabel ("1980",8*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
 		GLabel ten = new GLabel ("1990",9*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		
+		GLabel eleven = new GLabel ("2000",APPLICATION_WIDTH , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
 		
 		add (one);
 		add (two);
@@ -79,6 +79,7 @@ public class NameSurferGraph extends GCanvas
 		add (eight);
 		add (nine);
 		add (ten);
+		add (eleven);
 		
 	}
 
