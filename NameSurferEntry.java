@@ -6,10 +6,12 @@
  * of that name for each decade stretching back to 1900.
  */
 
+import acm.program.ConsoleProgram;
 import acm.util.*;
 import java.util.*;
 
-public class NameSurferEntry implements NameSurferConstants {
+public class NameSurferEntry extends ConsoleProgram {
+//public class NameSurferEntry implements NameSurferConstants {
 
 /* Constructor: NameSurferEntry(line) */
 /**
@@ -27,7 +29,7 @@ public class NameSurferEntry implements NameSurferConstants {
 		name = line.substring(0, nameEnd);
 	
 		String numbers = line.substring(nameEnd +1);
-
+		
 	}
 
 /* Method: getName() */
