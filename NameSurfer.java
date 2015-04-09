@@ -60,9 +60,9 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		
 		
 		println(entry.getName());
-		for (int i=0; i<11; i++) {
-			println(entry.getRank(i));		
-		}
+//		for (int i=0; i<11; i++) {
+//			println(entry.getRank(i));		
+//		}
 
 	}
 
