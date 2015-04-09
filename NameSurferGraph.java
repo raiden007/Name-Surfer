@@ -59,9 +59,26 @@ public class NameSurferGraph extends GCanvas
 	private void createBackgroundLabels() {
 		GLabel one = new GLabel ("1900",0 , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
 		GLabel two = new GLabel ("1910",APPLICATION_WIDTH / 10 , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel three = new GLabel ("1920",2*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel four = new GLabel ("1930",3*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel five = new GLabel ("1940",4*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel six = new GLabel ("1950",5*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel seven = new GLabel ("1960",6*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel eight = new GLabel ("1970",7*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel nine = new GLabel ("1980",8*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLabel ten = new GLabel ("1990",9*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		
 		
 		add (one);
 		add (two);
+		add (three);
+		add (four);
+		add (five);
+		add (six);
+		add (seven);
+		add (eight);
+		add (nine);
+		add (ten);
 		
 	}
 
