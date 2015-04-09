@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 /*
  * File: NameSurferDataBase.java
  * -----------------------------
@@ -19,8 +23,21 @@ public class NameSurferDataBase implements NameSurferConstants {
  * occurs as the file is being read.
  */
 	public NameSurferDataBase(String filename) {
-		// You fill this in //
-	}
+		   database = new ArrayList<String>();
+		   try {
+			   BufferedReader reader = new BufferedReader(new FileReader(filename));
+			   String line;
+			    while ((line = reader.readLine()) != null) {
+			    	database.add(line);
+			    }
+			    reader.close();
+		   }
+		   catch (Exception e)
+		   {
+		     System.err.format("Exception occurred trying to read '%s'.", "names-data.txt");
+		     e.printStackTrace();
+		   }
+	   }
 	
 /* Method: findEntry(name) */
 /**
@@ -30,7 +47,13 @@ public class NameSurferDataBase implements NameSurferConstants {
  */
 	public NameSurferEntry findEntry(String name) {
 		// You need to turn this stub into a real implementation //
+		if (database.contains(name)) {
+			return null;
+		} else {
 		return null;
+		}
 	}
+	
+	private ArrayList<String> database;
 }
 
