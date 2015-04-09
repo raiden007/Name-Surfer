@@ -21,12 +21,27 @@ public class NameSurferGraph extends GCanvas
 		addComponentListener(this);
 		//	 You fill in the rest //
 		GLine oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
-		add (oneLine);
+
 		GLine twoLine = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
-		add (twoLine);
+
 		int threeX = 2*(APPLICATION_WIDTH / 10);
 		GLine threeLine = new GLine (threeX,0,threeX,APPLICATION_HEIGHT);
+		
+		int fourX = 3*(APPLICATION_WIDTH / 10);
+		GLine fourLine = new GLine (fourX,0,fourX,APPLICATION_HEIGHT);
+		
+		int fiveX = 4*(APPLICATION_WIDTH / 10);
+		GLine fiveLine = new GLine (fiveX,0,fiveX,APPLICATION_HEIGHT);
+		
+		int sixX = 5*(APPLICATION_WIDTH / 10);
+		GLine sixLine = new GLine (sixX,0,sixX,APPLICATION_HEIGHT);
+		
+		add (oneLine);
+		add (twoLine);
 		add (threeLine);
+		add (fourLine);
+		add (fiveLine);
+		add (sixLine);
 	}
 	
 	/**
