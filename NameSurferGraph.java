@@ -22,7 +22,7 @@ public class NameSurferGraph extends GCanvas
 		//	 You fill in the rest //
 		GLine one = new GLine (0,0,0,APPLICATION_HEIGHT);
 		add (one);
-
+		update();
 	}
 	
 	/**
