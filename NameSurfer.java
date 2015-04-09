@@ -22,25 +22,9 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		addActionListeners();
 		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
 		NameSurferEntry entry = new NameSurferEntry(line);
-		
-		int nameEnd = line.indexOf(" ");
-		name = line.substring(0, nameEnd);
-	
-		String numbers = line.substring(nameEnd + 1);
-		String startParsing = numbers;
-		println("startParsing:" + startParsing);
-		for (int i=1; i<NDECADES; i++) {
-			int endDecade = startParsing.indexOf(" ");
-			println("endDecade:"+endDecade);
-			String decade = startParsing.substring(0, endDecade);
-			println("decade:" + decade);
-			int decadeInt = Integer.parseInt(decade);
-			println("decadeInt" + decadeInt);
-			rankings[i] = decadeInt;
-			println(rankings[i]);
-			startParsing = startParsing.substring(endDecade + 1);
-			println("new start parsing:" + startParsing);
-		}
+		println(entry.getName());
+		println(entry.getRank(1));
+
 
 	}
 

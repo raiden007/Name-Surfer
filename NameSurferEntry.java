@@ -24,7 +24,24 @@ public class NameSurferEntry implements NameSurferConstants {
 
 	private void parseLine(String line) {
 
-		
+		int nameEnd = line.indexOf(" ");
+		name = line.substring(0, nameEnd);
+	
+		String numbers = line.substring(nameEnd + 1);
+		String startParsing = numbers;
+//		println("startParsing:" + startParsing);
+		for (int i=1; i<NDECADES; i++) {
+			int endDecade = startParsing.indexOf(" ");
+//			println("endDecade:"+endDecade);
+			String decade = startParsing.substring(0, endDecade);
+//			println("decade:" + decade);
+			int decadeInt = Integer.parseInt(decade);
+//			println("decadeInt" + decadeInt);
+			rankings[i] = decadeInt;
+//			println(rankings[i]);
+			startParsing = startParsing.substring(endDecade + 1);
+//			println("new start parsing:" + startParsing);
+		}
 	}
 
 /* Method: getName() */
@@ -45,7 +62,7 @@ public class NameSurferEntry implements NameSurferConstants {
  */
 	public int getRank(int decade) {
 		// You need to turn this stub into a real implementation //
-		return 0;
+		return rankings[decade];
 	}
 
 /* Method: toString() */
