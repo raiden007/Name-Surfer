@@ -52,11 +52,18 @@ public class NameSurferGraph extends GCanvas
 	public void update() {
 		removeAll();
 		createBackgroundLines();
+		createBackgroundLabels();
 	}
 	
 	
-	
-	
+	private void createBackgroundLabels() {
+		GLabel one = new GLabel ("1900", 100, 100);
+		
+		
+		add (one);
+		
+	}
+
 	private void createBackgroundLines() {
 		GLine oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
 
