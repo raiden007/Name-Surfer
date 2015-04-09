@@ -42,7 +42,11 @@ private void addInteractors() {
  * button actions.
  */
 	public void actionPerformed(ActionEvent e) {
-		// You fill this in //
+		if(e.getSource()==graph) {
+			println(tf.getText());
+		} else if (e.getSource()==clear) {
+			println("Clear button pressed");
+		}
 	}
 	
 	public JTextField tf;
