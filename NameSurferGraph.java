@@ -109,6 +109,7 @@ public class NameSurferGraph extends GCanvas
 		add (elevenLine);
 		add (twelveLine);
 		add (upperLine);
+		add (lowerLine);
 		
 	}
 
