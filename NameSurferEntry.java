@@ -30,7 +30,7 @@ public class NameSurferEntry implements NameSurferConstants {
 		String numbers = line.substring(nameEnd + 1);
 		String startParsing = numbers;
 //		println("startParsing:" + startParsing);
-		for (int i=1; i<NDECADES + 1; i++) {
+		for (int i=1; i<NDECADES; i++) {
 			int endDecade = startParsing.indexOf(" ");
 //			println("endDecade:"+endDecade);
 			String decade = startParsing.substring(0, endDecade);
