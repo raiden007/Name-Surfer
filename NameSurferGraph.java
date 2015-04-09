@@ -19,6 +19,8 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
+		createBackgroundLines();
+		createBackgroundLabels();
 	}
 	
 	/**
@@ -49,8 +51,7 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public void update() {
 		removeAll();
-		createBackgroundLines();
-		createBackgroundLabels();
+
 	}
 	
 	
