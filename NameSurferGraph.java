@@ -115,5 +115,5 @@ public class NameSurferGraph extends GCanvas
 	public void componentResized(ComponentEvent e) { update(); }
 	public void componentShown(ComponentEvent e) { }
 	
-	private GLine oneLine = new GLine;
+	private GLine oneLine = oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
 }
