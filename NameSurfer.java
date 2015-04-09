@@ -43,7 +43,7 @@ private void addInteractors() {
  */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==graph || e.getSource()==tf) {
-			println(tf.getText());
+			println("Graph: " + tf.getText());
 		} else if (e.getSource()==clear) {
 			println("Clear button pressed");
 		}
