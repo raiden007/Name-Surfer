@@ -19,6 +19,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	public void init() {
 	    // You fill this in, along with any helper methods //
 		addInteractors();
+		graphView = new NameSurferGraph();
+		add(graphView);
 		addActionListeners();
 //		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
 //		NameSurferEntry entry = new NameSurferEntry(line);
@@ -59,8 +61,5 @@ private void addInteractors() {
 	public JTextField tf;
 	public JButton graph;
 	public JButton clear;
-	
-	private String name;
-	private int[] rankings = new int[NDECADES];
-	private String decade;
+	private NameSurferGraph graphView;
 }
