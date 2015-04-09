@@ -29,5 +29,4 @@ public interface NameSurferConstants {
 /** The number of pixels to reserve at the top and bottom */
 	public static final int GRAPH_MARGIN_SIZE = 20;
 
-	public String line = "Sam 58 69 99 131 168 236 278 380 467 408 466";
 }

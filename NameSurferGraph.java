@@ -51,16 +51,14 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public void update() {
 		removeAll();
-		add (oneLine);
-
-
+		createBackgroundLines();
 	}
 	
 	
 	
 	
 	private void createBackgroundLines() {
-		oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
+		GLine oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
 
 		GLine twoLine = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
 
@@ -94,6 +92,8 @@ public class NameSurferGraph extends GCanvas
 		int twelveX = APPLICATION_WIDTH;
 		GLine twelveLine = new GLine (twelveX,0,twelveX,APPLICATION_HEIGHT);
 		
+		GLine upperLine = new GLine (0, GRAPH_MARGIN_SIZE, APPLICATION_WIDTH,GRAPH_MARGIN_SIZE );
+		
 		add (oneLine);
 		add (twoLine);
 		add (threeLine);
@@ -106,6 +106,7 @@ public class NameSurferGraph extends GCanvas
 		add (tenLine);
 		add (elevenLine);
 		add (twelveLine);
+		add (upperLine);
 		
 	}
 
@@ -114,6 +115,4 @@ public class NameSurferGraph extends GCanvas
 	public void componentMoved(ComponentEvent e) { }
 	public void componentResized(ComponentEvent e) { update(); }
 	public void componentShown(ComponentEvent e) { }
-	
-	private GLine oneLine = oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
 }
