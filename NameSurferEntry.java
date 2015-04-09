@@ -79,7 +79,7 @@ public class NameSurferEntry implements NameSurferConstants {
 	public String toString() {
 		toString = name + " [";
 		for (int i=0; i<NDECADES; i++) {
-			toString += rankings[i] = " ";
+			toString += rankings[i] + " ";
 		}
 		toString += "]";
 		return toString;
