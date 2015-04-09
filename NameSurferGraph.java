@@ -20,6 +20,43 @@ public class NameSurferGraph extends GCanvas
 	public NameSurferGraph() {
 		addComponentListener(this);
 		//	 You fill in the rest //
+
+	}
+	
+	/**
+	* Clears the list of name surfer entries stored inside this class.
+	*/
+	public void clear() {
+		//	 You fill this in //
+	}
+	
+	/* Method: addEntry(entry) */
+	/**
+	* Adds a new NameSurferEntry to the list of entries on the display.
+	* Note that this method does not actually draw the graph, but
+	* simply stores the entry; the graph is drawn by calling update.
+	*/
+	public void addEntry(NameSurferEntry entry) {
+		// You fill this in //
+	}
+	
+	
+	
+	/**
+	* Updates the display image by deleting all the graphical objects
+	* from the canvas and then reassembling the display according to
+	* the list of entries. Your application must call update after
+	* calling either clear or addEntry; update is also called whenever
+	* the size of the canvas changes.
+	*/
+	public void update() {
+		createBackgroundLines();
+	}
+	
+	
+	
+	
+	private void createBackgroundLines() {
 		GLine oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
 
 		GLine twoLine = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
@@ -66,41 +103,9 @@ public class NameSurferGraph extends GCanvas
 		add (tenLine);
 		add (elevenLine);
 		add (twelveLine);
+		
 	}
-	
-	/**
-	* Clears the list of name surfer entries stored inside this class.
-	*/
-	public void clear() {
-		//	 You fill this in //
-	}
-	
-	/* Method: addEntry(entry) */
-	/**
-	* Adds a new NameSurferEntry to the list of entries on the display.
-	* Note that this method does not actually draw the graph, but
-	* simply stores the entry; the graph is drawn by calling update.
-	*/
-	public void addEntry(NameSurferEntry entry) {
-		// You fill this in //
-	}
-	
-	
-	
-	/**
-	* Updates the display image by deleting all the graphical objects
-	* from the canvas and then reassembling the display according to
-	* the list of entries. Your application must call update after
-	* calling either clear or addEntry; update is also called whenever
-	* the size of the canvas changes.
-	*/
-	public void update() {
 
-	}
-	
-	
-	
-	
 	/* Implementation of the ComponentListener interface */
 	public void componentHidden(ComponentEvent e) { }
 	public void componentMoved(ComponentEvent e) { }
