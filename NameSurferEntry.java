@@ -29,24 +29,17 @@ public class NameSurferEntry implements NameSurferConstants {
 	
 		String numbers = line.substring(nameEnd + 1);
 		String startParsing = numbers;
-//		println("startParsing:" + startParsing);
 		for (int i=0; i<NDECADES; i++) {
 			int endDecade = startParsing.indexOf(" ");
-//			println("endDecade:"+endDecade);
 			if (endDecade == -1) {
 				decade = startParsing.substring(0);
-//				println("decade:" + decade);
 			} else {
 				decade = startParsing.substring(0, endDecade);
-//				println("decade:" + decade);
 			}
 
 			int decadeInt = Integer.parseInt(decade);
-//			println("decadeInt" + decadeInt);
 			rankings[i] = decadeInt;
-//			println(rankings[i]);
 			startParsing = startParsing.substring(endDecade + 1);
-//			println("new start parsing:" + startParsing);
 		}
 	}
 

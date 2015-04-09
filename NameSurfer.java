@@ -30,6 +30,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		
 		println("To String:" + entry.toString());
 		
+		
+		
 	}
 
 private void addInteractors() {

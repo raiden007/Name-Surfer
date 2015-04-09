@@ -1,6 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
+import acm.util.*;
+import java.util.*;
 
 /*
  * File: NameSurferDataBase.java
@@ -23,21 +28,19 @@ public class NameSurferDataBase implements NameSurferConstants {
  * occurs as the file is being read.
  */
 	public NameSurferDataBase(String filename) {
-		   database = new ArrayList<String>();
-		   try {
-			   BufferedReader reader = new BufferedReader(new FileReader(filename));
-			   String line;
-			    while ((line = reader.readLine()) != null) {
-			    	database.add(line);
-			    }
-			    reader.close();
-		   }
-		   catch (Exception e)
-		   {
-		     System.err.format("Exception occurred trying to read '%s'.", "names-data.txt");
-		     e.printStackTrace();
-		   }
-	   }
+		try{
+			BufferedReader rd = new BufferedReader(new FileReader(filename));
+			while(true) {
+				String line = rd.readLine();
+				if(line == null) break;
+				NameSurferEntry nameEntry = new NameSurferEntry(line);
+				database.put(nameEntry.getName(), nameEntry);
+			}
+			rd.close();
+		} catch(IOException ex) {
+				throw new ErrorException(ex);
+			}
+		}
 	
 /* Method: findEntry(name) */
 /**
@@ -47,13 +50,21 @@ public class NameSurferDataBase implements NameSurferConstants {
  */
 	public NameSurferEntry findEntry(String name) {
 		// You need to turn this stub into a real implementation //
-		if (database.contains(name)) {
+		char ch = name.charAt(0);
+		if(Character.isLowerCase(ch) == true) {
+			ch = Character.toUpperCase(ch);
+		}
+		String otherLetters = name.substring(1);
+		otherLetters = otherLetters.toLowerCase();
+		name = ch + otherLetters;
+		if(database.containsKey(name)) {
+			return database.get(name);
+		}
+		else{
 			return null;
-		} else {
-		return null;
 		}
 	}
 	
-	private ArrayList<String> database;
+	private Map <String, NameSurferEntry> database = new HashMap <String, NameSurferEntry>(); 
 }
 
