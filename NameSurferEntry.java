@@ -77,12 +77,15 @@ public class NameSurferEntry implements NameSurferConstants {
  * NameSurferEntry.
  */
 	public String toString() {
-		// You need to turn this stub into a real implementation //
-		return "";
+		for (int i=0; i<NDECADES; i++) {
+			toString = "" + rankings[i];
+		}
+		return toString;
 	}
 	
 	private String name;
 	private int[] rankings = new int[NDECADES];
 	private String decade;
+	private String toString;
 }
 
