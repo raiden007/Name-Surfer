@@ -51,7 +51,18 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public void update() {
 		removeAll();
-		createBackgroundLines();
+		add (oneLine);
+		add (twoLine);
+		add (threeLine);
+		add (fourLine);
+		add (fiveLine);
+		add (sixLine);
+		add (sevenLine);
+		add (eightLine);
+		add (nineLine);
+		add (tenLine);
+		add (elevenLine);
+		add (twelveLine);
 
 	}
 	
