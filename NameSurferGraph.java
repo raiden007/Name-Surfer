@@ -20,8 +20,10 @@ public class NameSurferGraph extends GCanvas
 	public NameSurferGraph() {
 		addComponentListener(this);
 		//	 You fill in the rest //
-		GLine one = new GLine (0,0,0,600);
+		GLine one = new GLine (0,0,0,APPLICATION_HEIGHT);
 		add (one);
+		GLine two = new GLine(100,0,0,APPLICATION_HEIGHT;
+		add (two);
 	}
 	
 	/**
