@@ -30,11 +30,9 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		String startParsing = numbers;
 		println("startParsing:" + startParsing);
 		for (int i=0; i<NDECADES; i++) {
-			int startDecade = startParsing.indexOf(1);
-			println("startDecade:"+startDecade);
 			int endDecade = startParsing.indexOf(" ", startDecade+1);
 			println("endDecade:"+endDecade);
-			String decade = startParsing.substring(startDecade, endDecade);
+			String decade = startParsing.substring(0, endDecade);
 			println("decade:" + decade);
 //			int decadeInt = Integer.parseInt(decade);
 //			println("decadeInt" + decadeInt);
