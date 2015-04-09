@@ -19,13 +19,20 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	public void init() {
 	    // You fill this in, along with any helper methods //
 		addInteractors();
+		addActionListeners();
 	}
 
 private void addInteractors() {
 	JLabel label = new JLabel("Name: ");
+	tf = new JTextField(20);
+	tf.addActionListener(this);
+	graph = new JButton("Graph");
+	clear = new JButton("Clear");
 	
 	add(label,SOUTH);
-	
+	add(tf,SOUTH);
+	add(graph,SOUTH);
+	add(clear,SOUTH);
 }
 
 /* Method: actionPerformed(e) */
@@ -38,5 +45,7 @@ private void addInteractors() {
 		// You fill this in //
 	}
 	
-	public JTextField txtField;
+	public JTextField tf;
+	public JButton graph;
+	public JButton clear;
 }
