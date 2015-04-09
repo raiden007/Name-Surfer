@@ -22,12 +22,15 @@ public class NameSurferEntry implements NameSurferConstants {
 		parseLine(line);
 	}
 
-private void parseLine(String line) {
-	int nameEnd = line.indexOf(" ");
-	name = line.substring(0, nameEnd);
+	private void parseLine(String line) {
+		int nameEnd = line.indexOf(" ");
+		name = line.substring(0, nameEnd);
 	
-	String numbers = line.substring(nameEnd +1);
-}
+		String numbers = line.substring(nameEnd +1);
+		int startDecade0 = line.indexOf(" ", nameEnd + 1);
+		int endDecade0 = line.indexOf(nameEnd, startDecade0);
+		String decade0 = line.substring(startDecade0, endDecade0);
+	}
 
 /* Method: getName() */
 /**

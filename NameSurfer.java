@@ -20,6 +20,9 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    // You fill this in, along with any helper methods //
 		addInteractors();
 		addActionListeners();
+		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
+		NameSurferEntry entry = new NameSurferEntry(line);
+		println(entry.getName());
 	}
 
 private void addInteractors() {
