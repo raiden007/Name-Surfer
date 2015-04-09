@@ -38,7 +38,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 			println("decadeInt" + decadeInt);
 			rankings[i] = decadeInt;
 			println(rankings[i]);
-//			startParsing = startParsing.substring(endDecade);
+			startParsing = startParsing.substring(endDecade);
+			println("new start parsing:" + startParsing);
 		}
 
 	}
