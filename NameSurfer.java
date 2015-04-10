@@ -55,6 +55,7 @@ private void addInteractors() {
 		if(e.getSource()==graph || e.getSource()==tf) {
 			String userEntered = tf.getText();
 			println(dataBase.findEntry(userEntered));
+			
 		} else if (e.getSource()==clear) {
 			graphView.clear();
 		}
