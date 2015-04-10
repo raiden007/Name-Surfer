@@ -14,11 +14,14 @@ import java.awt.*;
 public class NameSurferGraph extends GCanvas
 	implements NameSurferConstants, ComponentListener {
 
+	private ArrayList <NameSurferEntry> entriesDisplayed;
+	
 	/**
 	* Creates a new NameSurferGraph object that displays the data.
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
+		entriesDisplayed = new ArrayList<NameSurferEntry>();
 	}
 	
 	/**
@@ -36,8 +39,7 @@ public class NameSurferGraph extends GCanvas
 	* simply stores the entry; the graph is drawn by calling update.
 	*/
 	public void addEntry(NameSurferEntry entry) {
-		GLabel firstDecade = new GLabel (entry.getName(), 100,100);
-		add (firstDecade);
+		entriesDisplayed.add(entry);
 	}
 	
 	
