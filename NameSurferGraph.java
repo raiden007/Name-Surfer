@@ -26,7 +26,8 @@ public class NameSurferGraph extends GCanvas
 	* Clears the list of name surfer entries stored inside this class.
 	*/
 	public void clear() {
-		//	 You fill this in //
+		removeAll();
+		drawGraph();
 	}
 	
 	/* Method: addEntry(entry) */
@@ -36,7 +37,8 @@ public class NameSurferGraph extends GCanvas
 	* simply stores the entry; the graph is drawn by calling update.
 	*/
 	public void addEntry(NameSurferEntry entry) {
-		// You fill this in //
+		GLabel firstDecade = new GLabel (entry.getName(), 100,100);
+		add (firstDecade);
 	}
 	
 	
