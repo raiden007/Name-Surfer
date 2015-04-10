@@ -54,10 +54,14 @@ private void addInteractors() {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==graph || e.getSource()==tf) {
 			String userEntered = tf.getText();
-			println(dataBase.findEntry(userEntered));
-			
+			NameSurferEntry rankings = dataBase.findEntry(userEntered);
+			if(rankings != null) {
+				graphView.addEntry(rankings);
+				graphView.update();
+			}
 		} else if (e.getSource()==clear) {
 			graphView.clear();
+			graphView.update();
 		}
 	}
 	
