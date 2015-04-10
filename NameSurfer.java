@@ -53,8 +53,9 @@ private void addInteractors() {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==graph || e.getSource()==tf) {
 			println("Graph: " + tf.getText());
+//			graphView.addEntry();
 		} else if (e.getSource()==clear) {
-			println("Clear button pressed");
+			graphView.clear();
 		}
 	}
 	
