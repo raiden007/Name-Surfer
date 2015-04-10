@@ -21,6 +21,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		addInteractors();
 		graphView = new NameSurferGraph();
 		add(graphView);
+		dataBase = new NameSurferDataBase("names-data.txt");
 		addActionListeners();
 //		String line = "Abraham 144 158 261 350 408 410 503 347 274 238 214";
 //		NameSurferEntry entry = new NameSurferEntry(line);
@@ -52,8 +53,8 @@ private void addInteractors() {
  */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==graph || e.getSource()==tf) {
-			println("Graph: " + tf.getText());
-//			graphView.addEntry();
+			String userEntered = tf.getText();
+			println(dataBase.findEntry(userEntered));
 		} else if (e.getSource()==clear) {
 			graphView.clear();
 		}
@@ -63,4 +64,5 @@ private void addInteractors() {
 	public JButton graph;
 	public JButton clear;
 	private NameSurferGraph graphView;
+	private NameSurferDataBase dataBase;
 }
