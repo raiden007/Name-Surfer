@@ -59,6 +59,7 @@ private void addInteractors() {
 				graphView.addEntry(rankings);
 				graphView.update();
 			}
+			tf.setText("");
 		} else if (e.getSource()==clear) {
 			graphView.clear();
 			graphView.update();
