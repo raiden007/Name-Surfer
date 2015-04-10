@@ -1,3 +1,4 @@
+
 /*
  * File: NameSurferGraph.java
  * ---------------------------
@@ -14,6 +15,13 @@ import java.awt.*;
 public class NameSurferGraph extends GCanvas
 	implements NameSurferConstants, ComponentListener {
 
+	/* Implementation of the ComponentListener interface */
+	public void componentHidden(ComponentEvent e) { }
+	public void componentMoved(ComponentEvent e) { }
+	public void componentResized(ComponentEvent e) { update(); }
+	public void componentShown(ComponentEvent e) { }
+	
+	/* Private instance variables */
 	private ArrayList <NameSurferEntry> entriesDisplayed;
 	
 	/**
@@ -28,8 +36,7 @@ public class NameSurferGraph extends GCanvas
 	* Clears the list of name surfer entries stored inside this class.
 	*/
 	public void clear() {
-		removeAll();
-		drawGraph();
+		entriesDisplayed.clear();
 	}
 	
 	/* Method: addEntry(entry) */
@@ -54,100 +61,122 @@ public class NameSurferGraph extends GCanvas
 	public void update() {
 		removeAll();
 		drawGraph();
+		if(entriesDisplayed.size() >= 0) {
+			for(int i = 0; i < entriesDisplayed.size(); i++) {
+				NameSurferEntry entries = entriesDisplayed.get(i); 
+				drawEntry(entries, i);
+			}
+		}
 	}
-	
 	
 	private void drawGraph() {
-		createBackgroundLines();
-		createBackgroundLabels();
+		drawVerticalLines();
+		drawHorizontalLines();
+		drawDecades(); 
 	}
-
-	private void createBackgroundLabels() {
-		GLabel one = new GLabel ("1900",0 , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel two = new GLabel ("1910",APPLICATION_WIDTH / 10 , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel three = new GLabel ("1920",2*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel four = new GLabel ("1930",3*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel five = new GLabel ("1940",4*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel six = new GLabel ("1950",5*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel seven = new GLabel ("1960",6*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel eight = new GLabel ("1970",7*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel nine = new GLabel ("1980",8*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel ten = new GLabel ("1990",9*(APPLICATION_WIDTH / 10) , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		GLabel eleven = new GLabel ("2000",APPLICATION_WIDTH , APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
-		
-		add (one);
-		add (two);
-		add (three);
-		add (four);
-		add (five);
-		add (six);
-		add (seven);
-		add (eight);
-		add (nine);
-		add (ten);
-		add (eleven);
-		
+	
+	//draws the vertical lines in the graph
+	private void drawVerticalLines() {
+		for(int i = 0; i<NDECADES; i++) {
+			double y1 = 0;
+			double y2 = getHeight();
+			double x = i * (getWidth()/NDECADES);
+			GLine line = new GLine(x, y1, x, y2);
+			add(line);
+		}
 	}
-
-	private void createBackgroundLines() {
-		GLine oneLine = new GLine (0,0,0,APPLICATION_HEIGHT);
-
-		GLine twoLine = new GLine(APPLICATION_WIDTH / 10,0,APPLICATION_WIDTH / 10,APPLICATION_HEIGHT);
-
-		int threeX = 2*(APPLICATION_WIDTH / 10);
-		GLine threeLine = new GLine (threeX,0,threeX,APPLICATION_HEIGHT);
-		
-		int fourX = 3*(APPLICATION_WIDTH / 10);
-		GLine fourLine = new GLine (fourX,0,fourX,APPLICATION_HEIGHT);
-		
-		int fiveX = 4*(APPLICATION_WIDTH / 10);
-		GLine fiveLine = new GLine (fiveX,0,fiveX,APPLICATION_HEIGHT);
-		
-		int sixX = 5*(APPLICATION_WIDTH / 10);
-		GLine sixLine = new GLine (sixX,0,sixX,APPLICATION_HEIGHT);
-		
-		int sevenX = 5*(APPLICATION_WIDTH / 10);
-		GLine sevenLine = new GLine (sevenX,0,sevenX,APPLICATION_HEIGHT);
-		
-		int eightX = 6*(APPLICATION_WIDTH / 10);
-		GLine eightLine = new GLine (eightX,0,eightX,APPLICATION_HEIGHT);
-		
-		int nineX = 7*(APPLICATION_WIDTH / 10);
-		GLine nineLine = new GLine (nineX,0,nineX,APPLICATION_HEIGHT);
-		
-		int tenX = 8*(APPLICATION_WIDTH / 10);
-		GLine tenLine = new GLine (tenX,0,tenX,APPLICATION_HEIGHT);
-		
-		int elevenX = 9*(APPLICATION_WIDTH / 10);
-		GLine elevenLine = new GLine (elevenX,0,elevenX,APPLICATION_HEIGHT);
-		
-		int twelveX = APPLICATION_WIDTH;
-		GLine twelveLine = new GLine (twelveX,0,twelveX,APPLICATION_HEIGHT);
-		
-		GLine upperLine = new GLine (0, GRAPH_MARGIN_SIZE, APPLICATION_WIDTH,GRAPH_MARGIN_SIZE );
-		
-		GLine lowerLine = new GLine (0, APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE,APPLICATION_WIDTH ,APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE );
-		
-		add (oneLine);
-		add (twoLine);
-		add (threeLine);
-		add (fourLine);
-		add (fiveLine);
-		add (sixLine);
-		add (sevenLine);
-		add (eightLine);
-		add (nineLine);
-		add (tenLine);
-		add (elevenLine);
-		add (twelveLine);
-		add (upperLine);
-		add (lowerLine);
-		
+	
+	//draws the horizontal lines in the graph
+	private void drawHorizontalLines() {
+		double x1 = 0;
+		double x2 = getWidth();
+		double yLine1 = getHeight() - GRAPH_MARGIN_SIZE;
+		GLine line1 = new GLine(x1, yLine1, x2, yLine1);
+		add(line1);
+		double yLine2 = GRAPH_MARGIN_SIZE;
+		GLine line2 = new GLine(x1, yLine2, x2, yLine2);
+		add(line2);
 	}
-
-	/* Implementation of the ComponentListener interface */
-	public void componentHidden(ComponentEvent e) { }
-	public void componentMoved(ComponentEvent e) { }
-	public void componentResized(ComponentEvent e) { update(); }
-	public void componentShown(ComponentEvent e) { }
+	
+	//draws the decade markers
+	private void drawDecades() {
+		for(int i = 0; i<NDECADES; i++) {
+			int decade = START_DECADE;
+			decade += 10*i;
+			String label = Integer.toString(decade);
+			double y = getHeight() - GRAPH_MARGIN_SIZE/4;
+			double x = 2 + i * (getWidth()/NDECADES);
+			GLabel displayedDecade = new GLabel(label, x, y);
+			add(displayedDecade);
+		}
+	}
+	
+	//draws the graph line with the name and rank # labels
+	private void drawEntry(NameSurferEntry entry, int entryNumber) {
+		//draws the graph line
+		for(int i = 0; i < NDECADES - 1; i++) {
+			int ranking1 = entry.getRank(i);
+			int ranking2 = entry.getRank(i+1);
+			double x1 = i * (getWidth()/NDECADES);
+			double x2 = (i+1) * (getWidth()/NDECADES);
+			double y1 = 0;
+			double y2 = 0;
+			if(ranking1 != 0 && ranking2 != 0) {
+				y1 = GRAPH_MARGIN_SIZE + (getHeight() - GRAPH_MARGIN_SIZE*2) * ranking1/MAX_RANK;
+				y2 = GRAPH_MARGIN_SIZE + (getHeight() - GRAPH_MARGIN_SIZE*2) * ranking2/MAX_RANK;
+			}
+			else if(ranking1 == 0 && ranking2 == 0) {
+				y1 = getHeight() - GRAPH_MARGIN_SIZE;
+				y2 = getHeight() - GRAPH_MARGIN_SIZE;
+			}
+			else if (ranking1 == 0){
+				y1 = getHeight() - GRAPH_MARGIN_SIZE;
+				y2 = GRAPH_MARGIN_SIZE + (getHeight() - GRAPH_MARGIN_SIZE*2) * ranking2/MAX_RANK;
+			}
+			else if(ranking2 == 0) {
+				y1 = GRAPH_MARGIN_SIZE + (getHeight() - GRAPH_MARGIN_SIZE*2) * ranking1/MAX_RANK;
+				y2 = getHeight() - GRAPH_MARGIN_SIZE;
+			}
+			GLine line = new GLine(x1, y1, x2, y2);
+			if(entryNumber%4 == 1) {
+				line.setColor(Color.RED);
+			}
+			else if(entryNumber%4 == 2) {
+				line.setColor(Color.BLUE);
+			}
+			else if(entryNumber%4 == 3) {
+				line.setColor(Color.MAGENTA);
+			}
+			add(line);
+		}
+		//adds in the label with the Name and Rank number
+		for(int i = 0; i<NDECADES; i++) {
+			String name = entry.getName();
+			int rank = entry.getRank(i);
+			String rankString = Integer.toString(rank);
+			String label = name + " " + rankString;
+			double x = i * (getWidth()/NDECADES) + 5;
+			double y = 0;
+			if(rank != 0) {
+				y = GRAPH_MARGIN_SIZE + (getHeight() - GRAPH_MARGIN_SIZE*2) * rank/MAX_RANK - 5;
+			}
+			else{
+				label = name + " *";
+				y = getHeight() - GRAPH_MARGIN_SIZE - 5;
+			}
+			GLabel nameLabel = new GLabel(label, x, y);
+			if(entryNumber%4 == 1) {
+				nameLabel.setColor(Color.RED);
+			}
+			else if(entryNumber%4 == 2) {
+				nameLabel.setColor(Color.BLUE);
+			}
+			else if(entryNumber%4 == 3) {
+				nameLabel.setColor(Color.MAGENTA);
+			}
+			add(nameLabel);
+		}
+	}
 }
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact
