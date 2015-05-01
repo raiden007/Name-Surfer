@@ -10,6 +10,11 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class NameSurfer extends Program implements NameSurferConstants {
+	
+	public static void maine (String[] args) {
+		new NameSurfer().start(args);
+	}
+	
 
 /* Method: init() */
 /**
